@@ -1,0 +1,1 @@
+(function(){"use strict";self.onmessage=i=>{const{atoms:a,neighbors:r}=i.data,t=new Set,s={};for(const o of a){const e=r[o.id]||[];if(e.length===0)s[o.id]=o.originalColor;else if(!t.has(o.id)){const c=s[e[0]]||o.originalColor;[o.id,...e].forEach(n=>{s[n]=c,t.add(n)})}}postMessage(s)}})();
